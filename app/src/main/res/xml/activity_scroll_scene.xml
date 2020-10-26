@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/iv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Constraint
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Constraint
+            android:id="@+id/tv_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@id/iv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Constraint
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Constraint
+            android:id="@+id/tv_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start" >
+
+        <KeyFrameSet>
+
+            <!--     小飞机的运动轨迹       -->
+            <KeyPosition
+                app:framePosition="25"
+                app:motionTarget="@id/iv_icon"
+                app:keyPositionType="parentRelative"
+                app:percentX="0.2"
+                app:percentY="0.4"/>
+
+            <KeyPosition
+                app:framePosition="50"
+                app:motionTarget="@id/iv_icon"
+                app:keyPositionType="parentRelative"
+                app:percentX="0.5"
+                app:percentY="0.6"/>
+
+            <KeyPosition
+                app:framePosition="75"
+                app:motionTarget="@id/iv_icon"
+                app:keyPositionType="parentRelative"
+                app:percentX="0.8"
+                app:percentY="0.8"/>
+
+            <KeyAttribute
+                app:framePosition="0"
+                app:motionTarget="@id/iv_icon"
+                android:alpha="0"
+                android:rotation="0"/>
+
+            <KeyAttribute
+                app:framePosition="1"
+                app:motionTarget="@id/iv_icon"
+                android:alpha="1"
+                android:rotation="0"/>
+
+            <KeyAttribute
+                app:framePosition="10"
+                app:motionTarget="@id/iv_icon"
+                android:rotation="-50"/>
+
+            <KeyAttribute
+                app:framePosition="25"
+                app:motionTarget="@id/iv_icon"
+                android:rotation="25"/>
+
+            <KeyAttribute
+                app:framePosition="100"
+                app:motionTarget="@id/iv_icon"
+                android:rotation="0"/>
+
+            <!--      小标题文字的显示效果      -->
+            <KeyAttribute
+                app:framePosition="0"
+                app:motionTarget="@id/tv_title"
+                android:alpha="0" />
+
+            <KeyAttribute
+                app:framePosition="25"
+                app:motionTarget="@id/tv_title"
+                android:alpha="0.2" />
+
+            <KeyAttribute
+                app:framePosition="50"
+                app:motionTarget="@id/tv_title"
+                android:alpha="0.5" />
+
+            <KeyAttribute
+                app:framePosition="100"
+                app:motionTarget="@id/tv_title"
+                android:alpha="1" />
+
+
+            <!--      大标题的显示效果      -->
+            <KeyAttribute
+                app:framePosition="0"
+                app:motionTarget="@id/tv_head"
+                android:alpha="1" />
+
+            <KeyAttribute
+                app:framePosition="25"
+                app:motionTarget="@id/tv_head"
+                android:alpha="0" />
+
+            <KeyAttribute
+                app:framePosition="100"
+                app:motionTarget="@id/tv_head"
+                android:alpha="0" />
+
+        </KeyFrameSet>
+
+    </Transition>
+</MotionScene>
